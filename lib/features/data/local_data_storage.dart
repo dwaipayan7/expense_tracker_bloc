@@ -52,6 +52,8 @@ class LocalDataStorage {
     }
     else{
       expenses.removeAt(expenseIndex);
+      _controller.add(expenses);
+      _preferences.setString(expenseCollectionKey, jsonEncode(expenses));
     }
   }
 
